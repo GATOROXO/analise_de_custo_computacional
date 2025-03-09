@@ -31,7 +31,7 @@ O foco da análise está na comparação dos tempos de inserção e eficiência 
      - ~1/3 dos valores inseridos em uma posição aleatória da lista.
 
 2. **Medição de Tempo:**
-   - Utilização da biblioteca `<times.h>` para medir o tempo de CPU gasto em cada inserção.
+   - Utilização da biblioteca `<time.h>` para medir o tempo de CPU gasto em cada inserção.
    - Inserção dos 10.000 valores em cada estrutura e registro do tempo de processamento.
    - Repetição do experimento 10 vezes para cada estrutura e cálculo do tempo médio de execução.
 
@@ -47,7 +47,7 @@ O foco da análise está na comparação dos tempos de inserção e eficiência 
 - **Lista Estática:** Utilização de um array fixo de tamanho 10.000 para armazenar os registros.
 - **Lista Encadeada Simples:** Implementação de nós alocados dinamicamente contendo um ponteiro para o próximo nó.
 - **Lista Duplamente Encadeada:** Implementação de nós com dois ponteiros, um apontando para o próximo e outro para o nó anterior.
-- **Medição de Tempo:** Uso da função `times()` da biblioteca `<sys/times.h>` para capturar o tempo de processamento.
+- **Medição de Tempo:** Uso da função `time()` da biblioteca `<time.h>` para capturar o tempo de processamento.
 - **Medição de Memória:** Uso de ferramentas como `sizeof()` e `malloc_usable_size()` (dependendo da plataforma) para avaliar o consumo de memória.
 
 ---
@@ -89,7 +89,7 @@ O código-fonte da implementação pode ser encontrado no diretório corresponde
 ---
 
 ## Referências
-- Documentação da biblioteca `<sys/times.h>`
+- Documentação da biblioteca `<time.h>`
 - Materiais da disciplina de Estrutura de Dados
 - Recursos adicionais sobre medição de desempenho em C
 
