@@ -1,9 +1,0 @@
-============Merge Sort(O (n log n))=============
-Merge sort:
-    ->Função recursiva
-        ->Entregue a lista, a posiçao da esquerda e a posiçao da direita
-        ->Dividir a lista até que posiçao seja igual a posiçao direita(divida no meio, chamada P/metade 1 e 2)
-        ->Após a divisão, faça a união entre as duas metades, ordenando.
-============Quick Sort(O (n log n))=============
-
-
