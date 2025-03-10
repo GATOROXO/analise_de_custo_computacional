@@ -1,5 +1,11 @@
 #include "est_lista_dupla_din.h"
 
+/**
+ * @brief Aloca um novo nó para a lista.
+ * 
+ * @param valor Valor a ser armazenado no nó.
+ * @return Ponteiro para o novo nó ou NULL em caso de erro.
+ */
 tipo_no_lista *alocaNo(int valor) {
     tipo_no_lista* novo_no = (tipo_no_lista*)malloc(sizeof(tipo_no_lista));
     if (novo_no == NULL) {
@@ -12,6 +18,12 @@ tipo_no_lista *alocaNo(int valor) {
     return novo_no;
 }
 
+/**
+ * @brief Insere um novo nó no início da lista.
+ * 
+ * @param inicio Ponteiro para o ponteiro do início da lista.
+ * @param valor Valor a ser inserido no novo nó.
+ */
 void insereInicioLst(tipo_no_lista** inicio, int valor) {
     tipo_no_lista *novo_no = alocaNo(valor);
     if (novo_no == NULL) return;
@@ -24,6 +36,12 @@ void insereInicioLst(tipo_no_lista** inicio, int valor) {
     }
 }
 
+/**
+ * @brief Insere um novo nó no final da lista.
+ * 
+ * @param inicio Ponteiro para o ponteiro do início da lista.
+ * @param valor Valor a ser inserido no novo nó.
+ */
 void insereFimLst(tipo_no_lista** inicio, int valor) {
     tipo_no_lista *novo_no = alocaNo(valor);
     if (novo_no == NULL) return;
@@ -39,6 +57,13 @@ void insereFimLst(tipo_no_lista** inicio, int valor) {
     }
 }
 
+/**
+ * @brief Insere um novo nó em uma posição específica da lista.
+ * 
+ * @param inicio Ponteiro para o ponteiro do início da lista.
+ * @param valor Valor a ser inserido no novo nó.
+ * @param pos Posição onde o novo nó será inserido.
+ */
 void inserePosLst(tipo_no_lista** inicio, int valor, int pos) {
     if (pos < 0) return;
     tipo_no_lista* novo_no = alocaNo(valor);
@@ -62,6 +87,12 @@ void inserePosLst(tipo_no_lista** inicio, int valor, int pos) {
     aux->prox = novo_no;
 }
 
+/**
+ * @brief Remove o nó do início da lista.
+ * 
+ * @param inicio Ponteiro para o ponteiro do início da lista.
+ * @return Valor armazenado no nó removido ou -1 em caso de erro.
+ */
 int removeInicioLst(tipo_no_lista** inicio) {
     if (*inicio == NULL) {
         printf("[ERRO] Lista Vazia.\n");
@@ -77,6 +108,12 @@ int removeInicioLst(tipo_no_lista** inicio) {
     return valor;
 }
 
+/**
+ * @brief Remove o nó do final da lista.
+ * 
+ * @param inicio Ponteiro para o ponteiro do início da lista.
+ * @return Valor armazenado no nó removido ou -1 em caso de erro.
+ */
 int removeFimLst(tipo_no_lista** inicio) {
     if (*inicio == NULL) {
         printf("Lista Vazia!\n");
@@ -98,9 +135,16 @@ int removeFimLst(tipo_no_lista** inicio) {
     return valor;
 }
 
+/**
+ * @brief Remove o nó de uma posição específica da lista.
+ * 
+ * @param inicio Ponteiro para o ponteiro do início da lista.
+ * @param pos Posição do nó a ser removido.
+ * @return Valor armazenado no nó removido ou -1 em caso de erro.
+ */
 int removePosLst(tipo_no_lista** inicio, int pos) {
     if (*inicio == NULL || pos < 0) {
-        printf("Lista vazia ou posicao invalida\n");
+        printf("Lista vazia ou posição inválida\n");
         return -1;
     }
     tipo_no_lista* aux = *inicio;
@@ -113,7 +157,7 @@ int removePosLst(tipo_no_lista** inicio, int pos) {
         i++;
     }
     if (aux == NULL) {
-        printf("Posicao inexistente\n");
+        printf("Posição inexistente\n");
         return -1;
     }
     int valor = aux->valor;
@@ -125,10 +169,17 @@ int removePosLst(tipo_no_lista** inicio, int pos) {
     return valor;
 }
 
+/**
+ * @brief Remove o nó que contém um valor específico.
+ * 
+ * @param inicio Ponteiro para o ponteiro do início da lista.
+ * @param valor Valor do nó a ser removido.
+ * @return Valor armazenado no nó removido ou -1 em caso de erro.
+ */
 int removeValorLst(tipo_no_lista** inicio, int valor) {
     tipo_no_lista* aux = buscaValorLst(*inicio, valor);
     if (aux == NULL) {
-        printf("Valor nao encontrado\n");
+        printf("Valor não encontrado\n");
         return -1;
     }
     if (aux == *inicio) {
@@ -144,6 +195,13 @@ int removeValorLst(tipo_no_lista** inicio, int valor) {
     return val;
 }
 
+/**
+ * @brief Busca o nó em uma posição específica da lista.
+ * 
+ * @param inicio Ponteiro para o início da lista.
+ * @param pos Posição do nó a ser buscado.
+ * @return Ponteiro para o nó encontrado ou NULL se não existir.
+ */
 tipo_no_lista *buscaPosLst(tipo_no_lista* inicio, int pos) {
     if (pos < 0) return NULL;
     tipo_no_lista* aux = inicio;
@@ -155,6 +213,13 @@ tipo_no_lista *buscaPosLst(tipo_no_lista* inicio, int pos) {
     return aux;
 }
 
+/**
+ * @brief Busca o nó que contém um valor específico na lista.
+ * 
+ * @param inicio Ponteiro para o início da lista.
+ * @param valor Valor a ser buscado.
+ * @return Ponteiro para o nó encontrado ou NULL se não existir.
+ */
 tipo_no_lista *buscaValorLst(tipo_no_lista* inicio, int valor) {
     tipo_no_lista* aux = inicio;
     while (aux != NULL) {
@@ -166,6 +231,12 @@ tipo_no_lista *buscaValorLst(tipo_no_lista* inicio, int valor) {
     return NULL;
 }
 
+/**
+ * @brief Conta o número de nós na lista.
+ * 
+ * @param inicio Ponteiro para o início da lista.
+ * @return Número de nós na lista.
+ */
 int contaNosLst(tipo_no_lista* inicio) {
     int count = 0;
     tipo_no_lista* aux = inicio;
@@ -176,6 +247,11 @@ int contaNosLst(tipo_no_lista* inicio) {
     return count;
 }
 
+/**
+ * @brief Imprime todos os valores dos nós da lista.
+ * 
+ * @param inicio Ponteiro para o início da lista.
+ */
 void imprimeLista(tipo_no_lista* inicio) {
     tipo_no_lista* aux = inicio;
     printf("Lista: ");
@@ -186,6 +262,12 @@ void imprimeLista(tipo_no_lista* inicio) {
     printf("\n");
 }
 
+/**
+ * @brief Busca e imprime a posição do nó que contém um valor específico.
+ * 
+ * @param inicio Ponteiro para o início da lista.
+ * @param valor Valor a ser buscado.
+ */
 void buscaEImprimeValorLst(tipo_no_lista* inicio, int valor) {
     tipo_no_lista* no = buscaValorLst(inicio, valor);
     if (no != NULL) {
@@ -197,13 +279,18 @@ void buscaEImprimeValorLst(tipo_no_lista* inicio, int valor) {
             aux = aux->prox;
         }
         if (aux != NULL) {
-            printf("Posicao encontrada: %d\n", pos);
+            printf("Posição encontrada: %d\n", pos);
         }
     } else {
-        printf("Valor nao encontrado\n");
+        printf("Valor não encontrado\n");
     }
 }
 
+/**
+ * @brief Libera a memória de todos os nós da lista.
+ * 
+ * @param inicio Ponteiro para o ponteiro do início da lista.
+ */
 void liberaLista(tipo_no_lista** inicio) {
     tipo_no_lista* aux;
     while (*inicio != NULL) {
