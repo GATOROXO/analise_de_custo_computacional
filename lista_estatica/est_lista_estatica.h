@@ -15,12 +15,8 @@ typedef struct lista {
 // Declarações das funções
 lista criar_lista();                           // Inicializa a lista
 void inserir_inicio(lista* l, int valor);      // Insere no início
-void inserir_fim(lista* l, int valor);         // Insere no fim
-void remover_inicio(lista* l);                 // Remove do início
-void remover_fim(lista* l);                    // Remove do fim
-void remover_especifico(lista* l, int valor);  // Remove um valor específico
+void inserir_fim(lista* l, int valor);         // Insere no fim 
 void inserir_posicao_especifica(lista* l, int valor, int pos); // Insere em posição específica
-void remover_posicao_especifica(lista* l, int pos);            // Remove de posição específica
 int contar_elementos(lista* l);                // Conta elementos na lista
 void imprime_lista(lista* l);                  // Imprime a lista 
 

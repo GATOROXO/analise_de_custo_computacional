@@ -31,48 +31,6 @@ void inserir_fim(lista* l, int valor) {
     l->contador++; // Incrementa o contador
 }
 
-// Remove do início com deslocamento
-void remover_inicio(lista* l) {
-    if (l->contador == 0) { // Verifica se a lista está vazia
-        printf("Erro: Lista vazia!\n");
-        return;
-    }
-    // Desloca os elementos para a esquerda
-    for (int i = 0; i < l->contador - 1; i++) {
-        l->vet[i] = l->vet[i + 1];
-    }
-    l->contador--; // Decrementa o contador
-}
-
-// Remove do fim
-void remover_fim(lista* l) {
-    if (l->contador == 0) { // Verifica se a lista está vazia
-        printf("Erro: Lista vazia!\n");
-        return;
-    }
-    l->contador--; // Decrementa o contador
-}
-
-// Remove um valor específico (primeira ocorrência)
-void remover_especifico(lista* l, int valor) {
-    if (l->contador == 0) { // Verifica se a lista está vazia
-        printf("Erro: Lista vazia!\n");
-        return;
-    }
-    // Procura o valor na lista
-    for (int i = 0; i < l->contador; i++) {
-        if (l->vet[i] == valor) {
-            // Desloca os elementos para a esquerda
-            for (int j = i; j < l->contador - 1; j++) {
-                l->vet[j] = l->vet[j + 1];
-            }
-            l->contador--; // Decrementa o contador
-            return;
-        }
-    }
-    printf("Valor %d nao encontrado!\n", valor); // Valor não encontrado
-}
-
 // Insere em uma posição específica com deslocamento
 void inserir_posicao_especifica(lista* l, int valor, int pos) {
     if (l->contador >= MAX) { // Verifica se a lista está cheia
@@ -91,22 +49,6 @@ void inserir_posicao_especifica(lista* l, int valor, int pos) {
     l->contador++; // Incrementa o contador
 }
 
-// Remove de uma posição específica
-void remover_posicao_especifica(lista* l, int pos) {
-    if (l->contador == 0) { // Verifica se a lista está vazia
-        printf("Erro: Lista vazia!\n");
-        return;
-    }
-    if (pos < 0 || pos >= l->contador) { // Verifica se a posição é inválida
-        printf("Erro: Posicao invalida!\n");
-        return;
-    }
-    // Desloca os elementos para a esquerda
-    for (int i = pos; i < l->contador - 1; i++) {
-        l->vet[i] = l->vet[i + 1];
-    }
-    l->contador--; // Decrementa o contador
-}
 
 // Conta o número de elementos na lista
 int contar_elementos(lista* l) {
