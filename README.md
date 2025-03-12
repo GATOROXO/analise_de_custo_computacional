@@ -58,11 +58,9 @@ Os resultados do tempo de execução para cada estrutura foram armazenados e ana
 
 | Estrutura                  | Inserções no Início | Inserções no Fim | Inserções Aleatórias | Menor Tempo | Maior Tempo | Tempo Médio |
 |----------------------------|--------------------|-----------------|------------------|-------------|-------------|-------------|
-| Lista Estática             | 3333               | 3333            | 3334             | XX ms       | XX ms       | XX ms       |
-| Lista Encadeada Simples    | 3333               | 3333            | 3334             | XX ms       | XX ms       | XX ms       |
-| Lista Duplamente Encadeada | 3333               | 3333            | 3334             | XX ms       | XX ms       | XX ms       |
-
-(Os valores de tempo serão preenchidos após os testes práticos serem realizados.)
+| Lista Estática             | 3333               | 3333            | 3334             | 0.0640       | 0.0800       | 0.0680      |
+| Lista Encadeada Simples    | 3333               | 3333            | 3334             | 0.0370       | 0.0400      | 0.0387       |
+| Lista Duplamente Encadeada | 3333               | 3333            | 3334             | 0.0830       | 0.0900       | 0.0880       |
 
 ---
 
@@ -70,11 +68,10 @@ Os resultados do tempo de execução para cada estrutura foram armazenados e ana
 
 | Estrutura                  | Memória Utilizada (bytes) | Eficiência de Uso |
 |----------------------------|--------------------------|------------------|
-| Lista Estática             | XX KB                    | Alta             |
-| Lista Encadeada Simples    | XX KB                    | Média            |
-| Lista Duplamente Encadeada | XX KB                    | Baixa            |
+| Lista Estática             | 40.004(~39KB)                    | Alta             |
+| Lista Encadeada Simples    | 80.000(~78 KB)                   | Média            |
+| Lista Duplamente Encadeada | 120000(~117KB)                   | Baixa            |
 
-(Os valores de memória serão preenchidos após os testes práticos serem realizados.)
 
 ### Conclusão
 - **Desempenho:** A estrutura mais eficiente em termos de tempo de inserção será determinada a partir dos testes.
